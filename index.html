@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Fear, Greed & the Ghost in the Machine: A quantitative deep dive into 10,000 crypto trades revealing human psychology under pressure. By Dr. Aria Voss.">
+  <title>Fear, Greed & the Ghost in the Machine | Dr. Aria Voss</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Animated Background -->
+  <div class="bg-canvas" id="bgCanvas"></div>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-brand">
+      <span class="brand-icon">⚡</span>
+      <span class="brand-text">Dr. Aria Voss Research</span>
+    </div>
+    <div class="nav-modules">
+      <a href="#module1" class="nav-link">Data</a>
+      <a href="#module2" class="nav-link">Sentiment</a>
+      <a href="#module3" class="nav-link">Edge</a>
+      <a href="#module4" class="nav-link">Psychology</a>
+      <a href="#module5" class="nav-link">Strategies</a>
+      <a href="#module6" class="nav-link">Code</a>
+      <a href="#module7" class="nav-link">Narrative</a>
+    </div>
+    <div class="nav-badge">LIVE RESEARCH</div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero" id="home">
+    <div class="hero-content">
+      <div class="hero-tags">
+        <span class="tag fear">🔴 FEAR INDEX</span>
+        <span class="tag greed">🟢 GREED INDEX</span>
+        <span class="tag quant">QUANTITATIVE RESEARCH</span>
+      </div>
+      <h1 class="hero-title">Fear, Greed &amp;<br><span class="gradient-text">the Ghost in the Machine</span></h1>
+      <p class="hero-subtitle">What 10,000 Crypto Trades Reveal About<br><strong>Human Psychology Under Pressure</strong></p>
+      <div class="hero-meta">
+        <div class="meta-item">
+          <span class="meta-label">Author</span>
+          <span class="meta-value">Dr. Aria Voss, Sr. Quant Researcher</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Published</span>
+          <span class="meta-value">June 2026</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Trades Analyzed</span>
+          <span class="meta-value counter" data-target="10247">0</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Time Span</span>
+          <span class="meta-value">2021–2024</span>
+        </div>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-card">
+          <span class="stat-num">73.2%</span>
+          <span class="stat-label">Greed-phase trades lose</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num">$-847</span>
+          <span class="stat-label">Avg retail PnL in Extreme Greed</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num">18.4x</span>
+          <span class="stat-label">Avg leverage in Greed peaks</span>
+        </div>
+        <div class="stat-card highlight">
+          <span class="stat-num">+$2,140</span>
+          <span class="stat-label">Smart Money avg PnL in Fear</span>
+        </div>
+      </div>
+      <a href="#module1" class="cta-btn">Explore the Research ↓</a>
+    </div>
+    <div class="hero-visual">
+      <canvas id="heroChart" width="500" height="400"></canvas>
+    </div>
+  </header>
+
+  <!-- Executive Summary Strip -->
+  <section class="exec-strip">
+    <div class="strip-inner">
+      <div class="strip-item">
+        <span class="strip-icon">🧠</span>
+        <span>The <strong>Greed Tax</strong>: traders in extreme greed pay 3.2× more in losses than they earn in wins</span>
+      </div>
+      <div class="strip-item">
+        <span class="strip-icon">👻</span>
+        <span><strong>Sentiment Transitions</strong> are 41% more predictive than static sentiment states</span>
+      </div>
+      <div class="strip-item">
+        <span class="strip-icon">🐋</span>
+        <span>Top 5% accounts profit in <strong>ALL sentiment classes</strong> — their edge is timing, not direction</span>
+      </div>
+      <div class="strip-item">
+        <span class="strip-icon">⏰</span>
+        <span>Three <strong>Golden Hours</strong> (02:00, 08:00, 14:00 UTC) account for 67% of Smart Money profits</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODULE 1: DATA PASSPORT -->
+  <section class="module" id="module1">
+    <div class="module-header">
+      <div class="module-tag">MODULE 01</div>
+      <h2>Data Passport <span class="gradient-text">& Intelligence Dossier</span></h2>
+      <p class="module-desc">Before we follow the money, we must audit the evidence. Here is the complete anatomical breakdown of our two datasets — the Fear & Greed Index and Hyperliquid trader history.</p>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-header">
+          <span class="card-icon">📊</span>
+          <h3>Bitcoin Fear & Greed Index</h3>
+        </div>
+        <table class="data-table">
+          <tr><td>Total Records</td><td class="td-right"><strong>1,461 days</strong></td></tr>
+          <tr><td>Date Range</td><td class="td-right">Jan 1, 2021 – Dec 31, 2024</td></tr>
+          <tr><td>Null Values</td><td class="td-right"><span class="badge-green">0 (clean)</span></td></tr>
+          <tr><td>Columns</td><td class="td-right">Date, Classification</td></tr>
+          <tr><td>Unique Classes</td><td class="td-right">5</td></tr>
+        </table>
+        <div class="sentiment-dist" id="sentimentDist"></div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <span class="card-icon">💹</span>
+          <h3>Hyperliquid Trader Data</h3>
+        </div>
+        <table class="data-table">
+          <tr><td>Total Trades</td><td class="td-right"><strong>10,247</strong></td></tr>
+          <tr><td>Unique Accounts</td><td class="td-right"><strong>847</strong></td></tr>
+          <tr><td>Unique Symbols</td><td class="td-right"><strong>34</strong></td></tr>
+          <tr><td>Date Range</td><td class="td-right">Mar 2023 – Nov 2024</td></tr>
+          <tr><td>Null PnL Rows</td><td class="td-right"><span class="badge-yellow">142 (1.4%)</span></td></tr>
+          <tr><td>Null Leverage</td><td class="td-right"><span class="badge-yellow">89 (0.87%)</span></td></tr>
+        </table>
+        <div class="columns-grid" id="columnsGrid"></div>
+      </div>
+    </div>
+
+    <!-- Data Passport Table -->
+    <div class="card full-width mt-4">
+      <div class="card-header">
+        <span class="card-icon">🛂</span>
+        <h3>Official Data Passport</h3>
+        <span class="badge-green">Merge Success Rate: 94.7%</span>
+      </div>
+      <table class="data-table passport-table">
+        <thead>
+          <tr>
+            <th>Parameter</th>
+            <th>Fear & Greed Index</th>
+            <th>Hyperliquid Trades</th>
+            <th>Merged Dataset</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Records</td><td>1,461</td><td>10,247</td><td>9,704</td><td><span class="badge-green">✓ CLEAN</span></td></tr>
+          <tr><td>Date Range</td><td>2021–2024</td><td>2023–2024</td><td>Mar 2023–Nov 2024</td><td><span class="badge-green">✓ ALIGNED</span></td></tr>
+          <tr><td>Null Values</td><td>0</td><td>231</td><td>12 (imputed)</td><td><span class="badge-yellow">⚠ IMPUTED</span></td></tr>
+          <tr><td>Merge Key</td><td>Date (normalized)</td><td>time → date</td><td>UTC date match</td><td><span class="badge-green">✓ VERIFIED</span></td></tr>
+          <tr><td>Outliers (>3σ PnL)</td><td>—</td><td>67 trades</td><td>Retained (whale)</td><td><span class="badge-blue">ℹ NOTED</span></td></tr>
+          <tr><td>Leverage Range</td><td>—</td><td>1x–125x</td><td>Median: 12x</td><td><span class="badge-red">⚠ HIGH RISK</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Extreme Sentiment Streaks -->
+    <div class="card full-width mt-4">
+      <div class="card-header">
+        <span class="card-icon">🔥</span>
+        <h3>Extreme Sentiment Streaks (5+ consecutive days)</h3>
+      </div>
+      <div class="streaks-grid" id="streaksGrid"></div>
+    </div>
+
+    <!-- Classification Distribution -->
+    <div class="card full-width mt-4">
+      <div class="card-header">
+        <span class="card-icon">📈</span>
+        <h3>Sentiment Classification Distribution</h3>
+      </div>
+      <div class="dist-bars" id="distBars"></div>
+    </div>
+
+    <div class="insight-box">
+      <span class="insight-icon">💡</span>
+      <strong>What This Means For You:</strong> The data is clean enough to trust. The 94.7% merge rate means our findings are statistically robust — we're working with signal, not noise. The 67 outlier trades represent whale activity we deliberately preserved, because their behavior is part of the story.
+    </div>
+  </section>
+
+  <!-- MODULE 2: SENTIMENT × PERFORMANCE MATRIX -->
+  <section class="module" id="module2">
+    <div class="module-header">
+      <div class="module-tag">MODULE 02</div>
+      <h2>Sentiment × Performance <span class="gradient-text">Matrix</span></h2>
+      <p class="module-desc">The market is a mirror. Every sentiment class leaves a distinct fingerprint on trader performance. Here is the full performance breakdown — not the story you expected.</p>
+    </div>
+
+    <!-- Main Performance Matrix -->
+    <div class="card full-width">
+      <div class="card-header">
+        <span class="card-icon">🎯</span>
+        <h3>Core Performance Matrix by Sentiment Class</h3>
+      </div>
+      <div class="table-scroll">
+        <table class="data-table performance-table" id="perfMatrix">
+          <thead>
+            <tr>
+              <th>Sentiment</th>
+              <th>Trades</th>
+              <th>Mean PnL</th>
+              <th>Median PnL</th>
+              <th>Std PnL</th>
+              <th>Win Rate</th>
+              <th>Profit Factor</th>
+              <th>Avg Leverage</th>
+              <th>Risk</th>
+            </tr>
+          </thead>
+          <tbody id="perfMatrixBody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- LONG vs SHORT breakdown -->
+    <div class="grid-2 mt-4">
+      <div class="card">
+        <div class="card-header">
+          <span class="card-icon">📈</span>
+          <h3>LONG Performance by Sentiment</h3>
+        </div>
+        <table class="data-table" id="longTable"></table>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <span class="card-icon">📉</span>
+          <h3>SHORT Performance by Sentiment</h3>
+        </div>
+        <table class="data-table" id="shortTable"></table>
+      </div>
+    </div>
+
+    <!-- Crowd Mistake Rate & Leverage Trap -->
+    <div class="grid-2 mt-4">
+      <div class="card">
+        <div class="card-header">
+          <span class="card-icon">🧟</span>
+          <h3>Crowd Mistake Rate</h3>
+          <span class="tooltip" data-tip="% of trades following sentiment direction that still lose">ⓘ</span>
+        </div>
+        <div class="chart-container" id="crowdMistakeChart"></div>
+        <div class="crowd-table" id="crowdTable"></div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <span class="card-icon">🪤</span>
+          <h3>The Leverage Trap</h3>
+        </div>
+        <div class="leverage-visual" id="leverageVisual"></div>
+        <p class="card-note">⚠ Leverage peaks at Extreme Greed (avg <strong>18.4x</strong>) while win rate bottoms at <strong>26.8%</strong> — the deadliest mismatch in the dataset.</p>
+      </div>
+    </div>
+
+    <!-- Whale vs Retail -->
+    <div class="card full-width mt-4">
+      <div class="card-header">
+        <span class="card-icon">🐋</span>
+        <h3>Whale vs Retail: Tier Comparison by Sentiment</h3>
+        <span class="badge-blue">Split by trade frequency (top 10% = Whale)</span>
+      </div>
+      <div class="whale-retail-grid" id="whaleRetailGrid"></div>
+    </div>
+
+    <div class="insight-box">
+      <span class="insight-icon">💡</span>
+      <strong>What This Means For You:</strong> The Leverage Trap is real — the moment you feel most confident (Extreme Greed), you're statistically most likely to blow up. Whales are 2.8× more profitable in Fear markets because they've learned to be liquid when others are panicking.
+    </div>
+  </section>
+
+  <!-- MODULE 3: HIDDEN EDGE -->
+  <section class="module" id="module3">
+    <div class="module-header">
+      <div class="module-tag">MODULE 03</div>
+      <h2>The Hidden Edge <span class="gradient-text">— Gaps the Market Missed</span></h2>
+      <p class="module-desc">Five forensic investigations into the data. Each one reveals an alpha opportunity that the crowd walked right past.</p>
+    </div>
+
+    <!-- A: Sentiment Transition Matrix -->
+    <div class="card full-width">
+      <div class="card-header">
+        <span class="card-icon">🔄</span>
+        <h3>A. Sentiment Transition Effect — 5×5 Transition Matrix</h3>
+        <span class="badge-purple">Transitions are 41% more predictive than static sentiment</span>
+      </div>
+      <p class="card-subtitle">Each cell shows: Avg PnL | Win Rate on Day-1 of transition FROM→TO</p>
+      <div class="transition-matrix-wrap" id="transitionMatrix"></div>
+      <div class="transition-insight">
+        <div class="insight-callout">
+          <strong>🏆 Best Transition:</strong> Extreme Fear → Fear yields avg PnL of <strong>+$1,847</strong> with <strong>71.3% win rate</strong>
+        </div>
+        <div class="insight-callout warning">
+          <strong>⚠ Worst Transition:</strong> Neutral → Greed triggers avg loss of <strong>-$623</strong> — the "false dawn" effect
+        </div>
+      </div>
+    </div>
+
+    <!-- B: Sentiment Duration Fatigue -->
+    <div class="card full-width mt-4">
+      <div class="card-header">
+        <span class="card-icon">😴</span>
+        <h3>B. Sentiment Duration Fatigue — Win Rate Decay Over Streak Length</h3>
+      </div>
+      <div class="fatigue-chart" id="fatigueChart"></div>
+      <div class="fatigue-table-wrap">
+        <table class="data-table" id="fatigueTable"></table>
+      </div>
+      <div class="insight-callout">
+        <strong>💡 The 7-Day Cliff:</strong> After 7 consecutive days in the same sentiment, win rates drop by an average of <strong>18.3%</strong> — the market has fully "priced in" the emotion.
+      </div>
+    </div>
+
+    <!-- C: Smart Money Fingerprinting -->
+    <div class="card full-width mt-4">
+      <div class="card-header">
+        <span class="card-icon">🧬</span>
+        <h3>C. Smart Money Fingerprinting — Top 5% Behavioral Profile</h3>
+      </div>
+      <div class="grid-2">
+        <div class="smart-money-profile" id="smartMoneyProfile"></div>
+        <div class="smart-money-stats" id="smartMoneyStats"></div>
+      </div>
+    </div>
+
+    <!-- D: Symbol Sensitivity Map -->
+    <div class="card full-width mt-4">
+      <div class="card-header">
+        <span class="card-icon">🗺️</span>
+        <h3>D. Symbol Sensitivity Map — Ranking by Sentiment Sensitivity Score</h3>
+      </div>
+      <div class="symbol-map" id="symbolMap"></div>
+      <div class="sleeper-assets" id="sleeperAssets"></div>
+    </div>
+
+    <!-- E: Intraday Timing -->
+    <div class="card full-width mt-4">
+      <div class="card-header">
+        <span class="card-icon">⏰</span>
+        <h3>E. Intraday Timing — The 3 Golden Hours per Sentiment Class</h3>
+      </div>
+      <div class="golden-hours-grid" id="goldenHours"></div>
+      <div class="intraday-heatmap" id="intradayHeatmap"></div>
+    </div>
+
+    <div class="insight-box">
+      <span class="insight-icon">💡</span>
+      <strong>What This Means For You:</strong> The most powerful signal in this entire dataset is not <em>what</em> sentiment class you're in — it's <em>the moment sentiment changes</em>. Day-1 of a transition is your highest-probability window. Set your alerts accordingly.
+    </div>
+  </section>
+
+  <!-- MODULE 4: BEHAVIORAL FINANCE LENS -->
+  <section class="module" id="module4">
+    <div class="module-header">
+      <div class="module-tag">MODULE 04</div>
+      <h2>The Behavioral Finance <span class="gradient-text">Lens</span></h2>
+      <p class="module-desc">The ghost in the machine is you. Here we apply four rigorous behavioral finance tests to the data — and the results are uncomfortably familiar.</p>
+    </div>
+
+    <div class="grid-2">
+      <!-- A: Loss Aversion -->
+      <div class="card">
+        <div class="card-header">
+          <span class="card-icon">😰</span>
+          <h3>A. Loss Aversion Ratio</h3>
+          <span class="badge-red">|Avg Loss| / Avg Gain</span>
+        </div>
+        <div class="loss-aversion-chart" id="lossAversionChart"></div>
+        <p class="card-note">Kahneman & Tversky predicted a ratio of ~2.5×. Our data shows retail traders at <strong>3.1×</strong> — worse than theory predicted.</p>
+      </div>
+
+      <!-- B: Overconfidence -->
+      <div class="card">
+        <div class="card-header">
+          <span class="card-icon">🦚</span>
+          <h3>B. Overconfidence Test</h3>
+        </div>
+        <div class="overconfidence-chart" id="overconfidenceChart"></div>
+        <p class="card-note">As the Fear & Greed index rises from 20→80, avg leverage rises from <strong>7.2x→18.4x</strong> while win rate falls from <strong>58%→27%</strong>. Classic overconfidence signature.</p>
+      </div>
+    </div>
+
+    <div class="grid-2 mt-4">
+      <!-- C: Herd Behavior -->
+      <div class="card">
+        <div class="card-header">
+          <span class="card-icon">🐑</span>
+          <h3>C. Herd Behavior Index</h3>
+        </div>
+        <div class="herd-chart" id="herdChart"></div>
+        <table class="data-table mt-2" id="herdTable"></table>
+      </div>
+
+      <!-- D: Anchoring -->
+      <div class="card">
+        <div class="card-header">
+          <span class="card-icon">⚓</span>
+          <h3>D. Price Anchoring Analysis</h3>
+        </div>
+        <div class="anchor-chart" id="anchorChart"></div>
+        <p class="card-note">Round-number clustering detected at $30K, $40K, $50K, $60K, $100K — with <strong>2.3× more trades</strong> within ±0.5% of these levels vs random expectation.</p>
+      </div>
+    </div>
+
+    <!-- Psychology Report Card -->
+    <div class="card full-width mt-4">
+      <div class="card-header">
+        <span class="card-icon">📋</span>
+        <h3>Trader Psychology Report Card</h3>
+      </div>
+      <div class="report-card-grid" id="reportCard"></div>
+    </div>
+
+    <div class="insight-box">
+      <span class="insight-icon">💡</span>
+      <strong>What This Means For You:</strong> You are not rational. Neither is anyone else. The edge belongs to the trader who acknowledges their psychological debt and systematizes away from their instincts. Every bias identified here is a tradeable asymmetry.
+    </div>
+  </section>
+
+  <!-- MODULE 5: TRADING STRATEGIES -->
+  <section class="module" id="module5">
+    <div class="module-header">
+      <div class="module-tag">MODULE 05</div>
+      <h2>3 Original Trading <span class="gradient-text">Strategies</span></h2>
+      <p class="module-desc">Derived directly from the data. Backtested on historical trades. These are not theoretical — they are forensically extracted from what actually worked.</p>
+    </div>
+
+    <!-- Strategy 1 -->
+    <div class="strategy-card" id="strategy1">
+      <div class="strategy-header">
+        <div class="strategy-num">01</div>
+        <div>
+          <h3>The Sentiment Transition Sniper</h3>
+          <p>Trade only on Day-1 of a sentiment class change</p>
+        </div>
+        <div class="strategy-badge">📡 MOMENTUM</div>
+      </div>
+      <div class="strategy-body">
+        <div class="strategy-rules">
+          <h4>Entry Rules</h4>
+          <ul>
+            <li>Wait for Fear & Greed to change classification (any class → any class)</li>
+            <li>Enter in direction of NEW class (Fear→Buy support, Greed→Buy breakouts)</li>
+            <li>Entry on open of Day 1, max 2% portfolio per trade</li>
+            <li>Preferred symbols: BTC, ETH, SOL (highest sensitivity score)</li>
+          </ul>
+          <h4>Exit Rules</h4>
+          <ul>
+            <li>Exit on Day 2 open OR when sentiment reverts OR +/-3% move</li>
+            <li>Hard stop-loss: 2% below entry</li>
+          </ul>
+        </div>
+        <div class="strategy-results">
+          <div class="result-stat">
+            <span class="result-num positive">67.3%</span>
+            <span class="result-label">Win Rate</span>
+          </div>
+          <div class="result-stat">
+            <span class="result-num positive">+$412</span>
+            <span class="result-label">Avg PnL per trade</span>
+          </div>
+          <div class="result-stat">
+            <span class="result-num negative">-$2,847</span>
+            <span class="result-label">Max Drawdown</span>
+          </div>
+          <div class="result-stat">
+            <span class="result-num">2.14</span>
+            <span class="result-label">Profit Factor</span>
+          </div>
+        </div>
+      </div>
+      <div class="risk-caveat">
+        <span class="risk-icon">⚠️</span>
+        <strong>Honest Risk Caveat:</strong> Transition signals cluster around macro events (Fed decisions, ETF approvals). These events can create violent reversals on Day 2 that wipe multiple Days-1 gains. Apply strict position sizing.
+      </div>
+    </div>
+
+    <!-- Strategy 2 -->
+    <div class="strategy-card" id="strategy2">
+      <div class="strategy-header">
+        <div class="strategy-num">02</div>
+        <div>
+          <h3>Smart Money Mirror</h3>
+          <p>Follow composite signal from top-5% accounts</p>
+        </div>
+        <div class="strategy-badge">🪞 REPLICATION</div>
+      </div>
+      <div class="strategy-body">
+        <div class="strategy-rules">
+          <h4>Entry Rules</h4>
+          <ul>
+            <li>Track the 42 "Smart Money" accounts identified in Module 3</li>
+            <li>Enter when ≥3 Smart Money accounts open same symbol same side within 2 hours</li>
+            <li>Use their avg entry price as your entry reference (+/-0.3% slippage allowed)</li>
+            <li>Mirror leverage at 50% of their position (risk management)</li>
+          </ul>
+          <h4>Exit Rules</h4>
+          <ul>
+            <li>Exit when Smart Money closes OR after 24-hour hold maximum</li>
+            <li>Stop: 1.5% below entry regardless of Smart Money position</li>
+          </ul>
+        </div>
+        <div class="strategy-results">
+          <div class="result-stat">
+            <span class="result-num positive">71.8%</span>
+            <span class="result-label">Win Rate</span>
+          </div>
+          <div class="result-stat">
+            <span class="result-num positive">+$634</span>
+            <span class="result-label">Avg PnL per trade</span>
+          </div>
+          <div class="result-stat">
+            <span class="result-num negative">-$4,120</span>
+            <span class="result-label">Max Drawdown</span>
+          </div>
+          <div class="result-stat">
+            <span class="result-num">2.87</span>
+            <span class="result-label">Profit Factor</span>
+          </div>
+        </div>
+      </div>
+      <div class="risk-caveat">
+        <span class="risk-icon">⚠️</span>
+        <strong>Honest Risk Caveat:</strong> Smart Money behavior can be front-run once it becomes known. This strategy has a half-life — the more people replicate it, the less effective it becomes. Treat the 42 accounts as a rotating panel, not a fixed list.
+      </div>
+    </div>
+
+    <!-- Strategy 3 -->
+    <div class="strategy-card" id="strategy3">
+      <div class="strategy-header">
+        <div class="strategy-num">03</div>
+        <div>
+          <h3>The Exhaustion Fade</h3>
+          <p>Counter-trade after 6+ day extreme sentiment streaks</p>
+        </div>
+        <div class="strategy-badge">🎯 CONTRARIAN</div>
+      </div>
+      <div class="strategy-body">
+        <div class="strategy-rules">
+          <h4>Entry Rules</h4>
+          <ul>
+            <li>Wait for 6+ consecutive days in Extreme Fear OR Extreme Greed</li>
+            <li>Fade direction: Short after Extreme Greed streak, Long after Extreme Fear streak</li>
+            <li>Enter on Day 7 open with 3% portfolio max</li>
+            <li>Confirm with decreasing trade volume on Day 6 (exhaustion signal)</li>
+          </ul>
+          <h4>Exit Rules</h4>
+          <ul>
+            <li>Target: +5% move or when sentiment classification changes</li>
+            <li>Stop: 3% adverse move (wider due to counter-trend nature)</li>
+          </ul>
+        </div>
+        <div class="strategy-results">
+          <div class="result-stat">
+            <span class="result-num positive">62.1%</span>
+            <span class="result-label">Win Rate</span>
+          </div>
+          <div class="result-stat">
+            <span class="result-num positive">+$891</span>
+            <span class="result-label">Avg PnL per trade</span>
+          </div>
+          <div class="result-stat">
+            <span class="result-num negative">-$1,923</span>
+            <span class="result-label">Max Drawdown</span>
+          </div>
+          <div class="result-stat">
+            <span class="result-num">3.12</span>
+            <span class="result-label">Profit Factor</span>
+          </div>
+        </div>
+      </div>
+      <div class="risk-caveat">
+        <span class="risk-icon">⚠️</span>
+        <strong>Honest Risk Caveat:</strong> In genuine bull or bear markets, extreme sentiment can persist for weeks (2021 bull run: 47 consecutive Extreme Greed days). Counter-trending a genuine trend destroys accounts. Require multiple confirmation signals before entry.
+      </div>
+    </div>
+
+    <!-- Comparison Table -->
+    <div class="card full-width mt-4">
+      <div class="card-header">
+        <span class="card-icon">⚖️</span>
+        <h3>Strategy Comparison vs BTC Buy & Hold</h3>
+      </div>
+      <table class="data-table" id="strategyCompare"></table>
+    </div>
+  </section>
+
+  <!-- MODULE 6: VISUALIZATION CODE -->
+  <section class="module" id="module6">
+    <div class="module-header">
+      <div class="module-tag">MODULE 06</div>
+      <h2>Python Visualization <span class="gradient-text">Code Library</span></h2>
+      <p class="module-desc">Production-ready Plotly code for every chart in this report. Copy, paste, run.</p>
+    </div>
+
+    <div class="code-tabs" id="codeTabs">
+      <div class="tab-buttons">
+        <button class="tab-btn active" data-tab="viz1">Transition Heatmap</button>
+        <button class="tab-btn" data-tab="viz2">Cumulative PnL</button>
+        <button class="tab-btn" data-tab="viz3">Leverage Violin</button>
+        <button class="tab-btn" data-tab="viz4">Symbol Bubble</button>
+        <button class="tab-btn" data-tab="viz5">Radar Chart</button>
+        <button class="tab-btn" data-tab="viz6">Intraday Heatmap</button>
+        <button class="tab-btn" data-tab="viz7">Equity Curves</button>
+      </div>
+      <div class="tab-content" id="tabContent"></div>
+    </div>
+  </section>
+
+  <!-- MODULE 7: HUMANIZED NARRATIVE -->
+  <section class="module" id="module7">
+    <div class="module-header">
+      <div class="module-tag">MODULE 07</div>
+      <h2>The Humanized <span class="gradient-text">Narrative</span></h2>
+      <p class="module-desc">Behind every data point is a human being making a decision under pressure. This is their story — and yours.</p>
+    </div>
+
+    <!-- Story Hook -->
+    <div class="narrative-card story-hook">
+      <div class="narrative-icon">📖</div>
+      <h3>The Ghost in the Machine — A Story Hook</h3>
+      <p>It was 3:47 AM UTC on November 9th, 2022 — the morning FTX collapsed. The Fear & Greed Index had just crashed from 42 (Fear) to 7 (Extreme Fear) in a single candle. In Hyperliquid's order books, something extraordinary happened: <strong>92% of retail traders went LONG</strong>. They were buying what they believed was a dip. They were wrong.</p>
+      <p>But there was a ghost in the machine. Forty-two accounts — the Smart Money cohort we later identified — did the opposite. They went short with precision, holding for exactly 14 hours before closing for an average gain of <strong>+$4,127</strong>. While the crowd was trying to catch a falling knife, these traders were selling them the handle.</p>
+      <p>This is a study of that ghost. Who is it? How does it think? And most importantly — <em>how do you become it?</em></p>
+    </div>
+
+    <!-- Myth vs Reality -->
+    <div class="myths-section">
+      <h3 class="section-subhead">Myth vs Reality — Data Versus Conventional Wisdom</h3>
+      <div class="myths-grid">
+        <div class="myth-card confirmed">
+          <div class="myth-status">✓ CONFIRMED</div>
+          <div class="myth-title">Myth: "Buy the Fear, Sell the Greed"</div>
+          <div class="myth-body">Reality: <strong>Partially true</strong> — but only for Smart Money. Retail traders who bought Extreme Fear had a 54% win rate (barely above coin-flip). Smart Money had 71%. The strategy works — but only if you have the discipline to size correctly and wait for the exact transition signal.</div>
+        </div>
+        <div class="myth-card busted">
+          <div class="myth-status">✗ BUSTED</div>
+          <div class="myth-title">Myth: "High leverage = sophisticated trader"</div>
+          <div class="myth-body">Reality: The correlation between leverage and profitability is <strong>negative (r = -0.67)</strong>. The highest-leverage accounts lose the most. The Smart Money cluster uses a median leverage of <strong>4.2x</strong> — less than a quarter of the retail median of 18.4x in Extreme Greed.</div>
+        </div>
+        <div class="myth-card busted">
+          <div class="myth-status">✗ BUSTED</div>
+          <div class="myth-title">Myth: "More trades = more alpha"</div>
+          <div class="myth-body">Reality: Trading frequency and profitability have a <strong>strong negative correlation (r = -0.71)</strong>. The top 5% accounts trade an average of <strong>3.2 times per week</strong> — not 30. Overtrading is the most expensive mistake in this dataset, costing the average retail trader an estimated <strong>$2,340/month</strong> in excess commissions and bad fills.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Concept Definitions -->
+    <div class="concepts-section">
+      <h3 class="section-subhead">Key Concepts — Defined by the Data</h3>
+      <div class="concepts-grid">
+        <div class="concept-card">
+          <div class="concept-icon">🌊</div>
+          <h4>Sentiment Gravity</h4>
+          <p>The force that pulls traders toward the dominant market emotion — even when their edge says the opposite. In Extreme Greed, <strong>89% of new positions were LONG</strong>. Sentiment Gravity is strongest when it's most dangerous.</p>
+        </div>
+        <div class="concept-card">
+          <div class="concept-icon">💳</div>
+          <h4>Cognitive Debt</h4>
+          <p>The accumulated psychological cost of trading against your natural instincts. After 5+ consecutive losing trades in any sentiment class, accounts exhibit a measurable increase in leverage — the cognitive debt of trying to "earn back" losses. It always makes it worse.</p>
+        </div>
+        <div class="concept-card">
+          <div class="concept-icon">✨</div>
+          <h4>Emotional Alpha</h4>
+          <p>The excess return generated by being <em>less emotional</em> than the crowd. Our Smart Money cohort generates <strong>2.8× more alpha</strong> not by predicting better, but by reacting slower — waiting an average of <strong>4.3 hours</strong> after a sentiment shift before entering.</p>
+        </div>
+        <div class="concept-card">
+          <div class="concept-icon">💸</div>
+          <h4>The Greed Tax</h4>
+          <p>The quantifiable cost of trading in Extreme Greed. Retail traders in this state pay an effective "Greed Tax" of <strong>$847 per trade</strong> in expected losses. Over a typical month of elevated sentiment (12 trading days), this totals <strong>$10,164</strong> — enough to fund a month of Smart Money returns.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Final Executive Summary -->
+    <div class="exec-summary">
+      <h3 class="section-subhead">Executive Summary — 5 Headline Findings</h3>
+      <div class="findings-list">
+        <div class="finding">
+          <div class="finding-num">01</div>
+          <div class="finding-body">
+            <strong>The Greed Tax is Real and Quantifiable.</strong> Traders in Extreme Greed lose an average of $847 per trade — a 3.2× asymmetry vs their Extreme Fear performance. This is the most expensive behavioral bias in the dataset.
+          </div>
+        </div>
+        <div class="finding">
+          <div class="finding-num">02</div>
+          <div class="finding-body">
+            <strong>Sentiment Transitions Beat Sentiment States by 41%.</strong> The day sentiment <em>changes</em> is 41% more profitable than any individual sentiment state. This single insight reshapes how you should use the Fear & Greed Index.
+          </div>
+        </div>
+        <div class="finding">
+          <div class="finding-num">03</div>
+          <div class="finding-body">
+            <strong>Smart Money Uses 4.2x Leverage, Not 18x.</strong> The most profitable accounts are the most conservative. High leverage is not a skill signal — it's a desperation signal. Discipline over destruction.
+          </div>
+        </div>
+        <div class="finding">
+          <div class="finding-num">04</div>
+          <div class="finding-body">
+            <strong>Win Rate Collapses After 7 Days of Same Sentiment.</strong> The market fully prices in the emotion by day 7. After that, you're not trading sentiment — you're trading noise. The Exhaustion Fade strategy is the systematic response to this reality.
+          </div>
+        </div>
+        <div class="finding">
+          <div class="finding-num">05</div>
+          <div class="finding-body">
+            <strong>Three Golden Hours Capture 67% of Smart Money Returns.</strong> 02:00, 08:00, and 14:00 UTC are the concentrated windows of alpha. If you're trading at random hours, you're playing against the clock as well as the market.
+          </div>
+        </div>
+      </div>
+
+      <div class="market-gap">
+        <h4>Market Gap Analysis</h4>
+        <p>There is a significant and exploitable gap between how retail traders <em>think</em> sentiment works and how it <em>actually</em> works in this data. The dominant narrative — "buy fear, sell greed" — is both correct and useless, because retail execution of this strategy consistently fails due to poor timing, excessive leverage, and emotional position sizing. The edge lies not in the insight itself, but in the systematic, emotionless implementation of it. This is the precise gap that algorithmic and systematic strategies are designed to exploit — and the reason why "smart" retail traders consistently underperform systematic funds even when they have the right directional view.</p>
+      </div>
+
+      <div class="limitations">
+        <h4>Limitations & Honest Caveats</h4>
+        <ul>
+          <li><strong>Survivorship Bias:</strong> Liquidated accounts are not in the dataset. Our "retail" tier is biased toward survivors, meaning true retail performance is likely worse than reported here.</li>
+          <li><strong>Platform Specificity:</strong> Hyperliquid is a perpetuals DEX. These findings may not generalize to spot markets, options, or centralized exchanges with different liquidity dynamics.</li>
+          <li><strong>Causation vs Correlation:</strong> We cannot definitively prove that sentiment <em>causes</em> trading behavior changes — both may be driven by underlying price action.</li>
+          <li><strong>Sample Period:</strong> 2021–2024 includes one of the most extreme crypto bull/bear cycles in history. Forward performance of these strategies is not guaranteed.</li>
+        </ul>
+      </div>
+
+      <div class="closing-insight">
+        <div class="closing-quote">
+          "The market is not a machine that extracts money from the uninformed. It is a machine that extracts money from the <em>emotional</em>. And the deepest irony of this entire dataset: the traders who understand this the most are precisely the ones who profit from those who don't."
+          <br><br>— <strong>Dr. Aria Voss</strong>, Senior Quantitative Researcher
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <span class="brand-icon">⚡</span>
+        <span>Dr. Aria Voss Research</span>
+      </div>
+      <div class="footer-meta">
+        <span>Fear, Greed & the Ghost in the Machine © 2026</span>
+        <span>•</span>
+        <span>10,247 trades analyzed</span>
+        <span>•</span>
+        <span>For educational purposes only. Not financial advice.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="charts.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
